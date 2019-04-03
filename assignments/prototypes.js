@@ -22,7 +22,7 @@ function GameObject(attributes){
   this.dimensions = attributes.dimensions;
 }
 
-destroy.prototype.speak = function (){
+Gameobject.prototype.destroy = function (){
   return `${this.name} was removed from the game.`
 }
 
@@ -37,7 +37,7 @@ function CharacterStates(attributes){
   this.healthPoints =attributes.healthPoints;
 }
 
-CharacterStates.prototype.speak = function (){
+CharacterStates.prototype.takedamage = function (){
   return `${this.name} took damage.`
 }
 
@@ -50,6 +50,16 @@ CharacterStates.prototype.speak = function (){
   * should inherit destroy() from GameObject through CharacterStats
   * should inherit takeDamage() from CharacterStats
 */
+
+function Humanoid(attributes){
+  this.team = attributes.team;
+  this.weapons = attributes.weaps;
+  this.language = attributes.language;
+}
+
+Humanoid.prototype.greet(){
+  return `${this.name} offers a greeting in ${this.language}'
+}
  
 /*
   * Inheritance chain: GameObject -> CharacterStats -> Humanoid
