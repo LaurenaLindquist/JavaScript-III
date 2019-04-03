@@ -16,12 +16,30 @@
   * destroy() // prototype method that returns: `${this.name} was removed from the game.`
 */
 
+function GameObject(attributes){
+  this.createdAt = attributes.createdAt;
+  this.name = attributes.name;
+  this.dimensions = attributes.dimensions;
+}
+
+destroy.prototype.speak = function (){
+  return `${this.name} was removed from the game.`
+}
+
 /*
   === CharacterStats ===
   * healthPoints
   * takeDamage() // prototype method -> returns the string '<object name> took damage.'
   * should inherit destroy() from GameObject's prototype
 */
+
+function CharacterStates(attributes){
+  this.healthPoints =attributes.healthPoints;
+}
+
+CharacterStates.prototype.speak = function (){
+  return `${this.name} took damage.`
+}
 
 /*
   === Humanoid (Having an appearance or character resembling that of a human.) ===
